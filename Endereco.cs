@@ -1,6 +1,6 @@
 using System;
 
-namespace ENCONTROREMOTO8
+namespace EncontroRemoto
 {
     public class Endereco
     {
@@ -8,5 +8,13 @@ namespace ENCONTROREMOTO8
         public int numero { get; set; }
         public string? complemento { get; set; }
         public bool enderecoComercial { get; set; }
+        
+        
+        
+        
+
+
+        
+        
     }
 }

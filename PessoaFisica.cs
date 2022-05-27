@@ -1,4 +1,6 @@
-namespace ENCONTROREMOTO8
+using System;
+
+namespace EncontroRemoto
 {
     public class PessoaFisica : Pessoa
     {
@@ -11,17 +13,15 @@ namespace ENCONTROREMOTO8
             if (rendimento <= 1500)
             {
                 return 0;
-            }
-            else if (rendimento > 1500 && rendimento <= 5000)
+
+            }else if (rendimento > 1500 && rendimento <= 5000)
             {
-                return (rendimento/100)*3;
-            }
-            else
-            {
-                return (rendimento/100)*5;
-            }
-        }
-        
+                return (rendimento/100) *3; //*0,03  (rendimento/100)*3;   *1.03
+
+            }else{
+                return (rendimento/100) *5;
+            }                      
+        }        
         public bool ValidarDataNascimento(DateTime dataNasc)
         {
             DateTime dataAtual = DateTime.Today;
@@ -36,6 +36,7 @@ namespace ENCONTROREMOTO8
             {
                 return false;
             }
-        }
+        }    
     }
+
 }

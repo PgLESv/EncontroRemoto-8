@@ -1,50 +1,50 @@
-using System;
+﻿using System;
 using System.Threading;
 using System.Collections.Generic;
 using System.IO;
 
-namespace ENCONTROREMOTO8
+namespace EncontroRemoto
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            List<PessoaFisica> listaPf = new List<PessoaFisica>();
-            List<PessoaJuridica> listaPj = new List<PessoaJuridica>();
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine(@$"
-=============================================
-|    Bem vindo ao sistema de cadastro       |
-|    de pessoa física e pessoa jurídica     |
-=============================================
+   class Program
+   {
+       static void Main(string[] args)
+       {
+
+           List<PessoaFisica> listaPf = new List<PessoaFisica>();
+           List<PessoaJuridica> listaPj = new List<PessoaJuridica>();
+           Console.Clear();
+           Console.ForegroundColor = ConsoleColor.DarkGreen;
+           Console.BackgroundColor = ConsoleColor.White;
+           Console.WriteLine(@$"
+========================================
+|  Bem-vindo ao Sistema de Cadastro    |
+|  de Pessoa Física e Pessoa Jurídica  |
+========================================
 ");
-     
             BarraCarregamento("Iniciando");
 
             string? opcao;
-
+           
             do
             {
                 Console.WriteLine(@$"
-=====================================
-|   Escolha uma das opções abaixo   |
-|           PESSOA FÍSICA           |
-|   1 - Cadastrar Pessoa Física     |
-|   2 - Listar Pessoa Física        |
-|   3 - Remover Pessoa Física       |
-|                                   |
-|          PESSOA JURÍDICA          |
-|   4 - Cadastrar Pessoa Jurídica   |
-|   5 - Listar Pessoa Jurídica      |
-|   6 - Remover Pessoa Jurídica     |
-|                                   |
-|           0 - Sair                |
-=====================================
+===================================
+| Escolha uma das opções abaixo   |
+|        PESSSOA FÍSICA           |
+| 1 - Cadastrar Pessoa Física     |
+| 2 - Listar Pessoa Física        |
+| 3 = Remover Pessoa Física       |
+|                                 | 
+|         PESSOA JURÍDICA         |
+| 4 - Cadastrar Pessoa Jurídica   |
+| 5 - Listar Pessoa Jurídica      |
+| 6 - Remover Pessoa Jurídica     |
+|                                 |
+|        0 - Sair                 |
+===================================
 ");
-
-            opcao = Console.ReadLine();
+                
+                opcao = Console.ReadLine();
 
             switch (opcao)
             {
@@ -231,21 +231,25 @@ namespace ENCONTROREMOTO8
             }
                 
             } while (opcao != "0");
-            
-            static void BarraCarregamento(string textoCarregamento)
-            {
-                Console.ResetColor();
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.Write(textoCarregamento);
-                Thread.Sleep(500);
+       }
 
-                for (var contador = 0; contador < 10; contador++)
-                {
-                    Console.Write($".");
-                    Thread.Sleep(500); 
-                }
-                Console.ResetColor();
+        static void BarraCarregamento(string textoCarregamento)
+        {
+            Console.ResetColor(); 
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(textoCarregamento);
+            Thread.Sleep(500);
+
+
+            for (var contador = 0; contador < 10; contador++)
+            {
+                
+                Console.Write($".");
+                Thread.Sleep(500);            
             }
+            Console.ResetColor();  
+
+
         }
-    }
+   }
 }
